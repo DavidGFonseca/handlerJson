@@ -11,9 +11,18 @@ class HandlerJson:
             dump(data, f, indent=2)
 
     def readJson(self,filePath):
+        
         if isfile(filePath):
             with open(filePath,'r') as f:
                 data = load(f)
                 return data
         else:
             return False
+        
+
+    def updateJson(self,filePath,data):
+        
+        if data:
+            with open(filePath,'w') as f:
+                dump(data,f,indent=2)
+        
